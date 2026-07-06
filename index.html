@@ -228,7 +228,7 @@
             gap: 24px;
         }
 
-        /* CONTAINER INTERATIVO AVANÇADO (Transição desacelerada premium) */
+        /* CONTAINER INTERATIVO REFINADO (Transição longa de 1.2s para máxima suavidade) */
         .interactive-article-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #f8fafc;
@@ -236,10 +236,8 @@
             border-radius: 14px;
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.03);
-            text-decoration: none;
-            display: block;
             overflow: hidden;
-            transition: all 0.7s cubic-bezier(0.25, 1, 0.33, 1);
+            transition: all 1.2s cubic-bezier(0.25, 1, 0.22, 1);
         }
 
         .interactive-article-card:hover {
@@ -268,16 +266,16 @@
             font-size: 1.75rem;
             font-weight: 400;
             line-height: 1.35;
-            color: #00d2ff; /* Cor azul destacada conforme o print */
+            color: #ffffff; /* Retornado para branco clássico */
             margin-bottom: 0;
-            transition: margin 0.7s cubic-bezier(0.25, 1, 0.33, 1);
+            transition: margin 1.2s cubic-bezier(0.25, 1, 0.22, 1);
         }
 
         .interactive-article-card:hover h3 {
             margin-bottom: 25px;
         }
 
-        /* Linha de metadados padrão configurada de acordo com as instruções */
+        /* Texto da meta V1 idêntico ao print fornecido */
         .meta-default {
             font-size: 0.85rem;
             color: #94a3b8;
@@ -285,7 +283,7 @@
             display: block;
             opacity: 1;
             max-height: 40px;
-            transition: all 0.4s ease;
+            transition: all 0.5s ease;
         }
 
         .interactive-article-card:hover .meta-default {
@@ -295,13 +293,13 @@
             overflow: hidden;
         }
 
-        /* Conteúdo Oculto Expandível (Texto, Citação e Botão) */
+        /* Conteúdo Oculto Expandível */
         .hidden-content-wrapper {
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             visibility: hidden;
-            transition: max-height 0.7s cubic-bezier(0.25, 1, 0.33, 1), opacity 0.5s ease, visibility 0.5s;
+            transition: max-height 1.2s cubic-bezier(0.25, 1, 0.22, 1), opacity 0.8s ease, visibility 0.8s;
         }
 
         .interactive-article-card:hover .hidden-content-wrapper {
@@ -326,6 +324,7 @@
             font-size: 1rem;
         }
 
+        /* Novo visual limpo e editorial para o botão da OAB/Revista */
         .wrapper-botao {
             margin-top: 30px;
         }
@@ -334,22 +333,25 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background-color: #9a3412;
+            background-color: transparent;
             color: #ffffff;
+            border: 1px solid #9a3412;
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 12px 26px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(154, 52, 18, 0.15);
-            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-revista:hover {
-            background-color: #ea580c;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(154, 52, 18, 0.3);
+            background-color: #9a3412;
+            border-color: #9a3412;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(154, 52, 18, 0.3);
         }
 
         /* Módulo de Experiências Estilo Linha do Tempo Fina */
@@ -574,6 +576,10 @@
             .interactive-article-card:hover .hidden-content-wrapper {
                 max-height: 800px;
             }
+            .btn-revista {
+                width: 100%;
+                justify-content: center;
+            }
 
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -635,7 +641,7 @@
             <h2>Artigos.</h2>
             
             <div class="artigos-grid">
-                <a href="http://revistas.unirn.edu.br/index.php/revistajuridica/article/view/1171/988" target="_blank" class="interactive-article-card">
+                <div class="interactive-article-card">
                     <span class="badge-dark">Revista Científica / TCC</span>
                     <h3>A Lei 14.230/2021 e o regime sancionatório da improbidade administrativa: uma análise do artigo 12 à luz da interpretação normativa.</h3>
                     
@@ -645,17 +651,17 @@
                         <p class="article-body-text" style="margin-top: 25px;">
                             A reforma introduzida pela Lei 14.230/2021 alterou substancialmente a sistemática processual e material das sanções, exigindo do operador do direito uma visão muito mais estratégica e hermenêutica do texto constitucional.
                         </p>
-                        <blockquote>
+                        blockquote>
                             "O direito sancionatório moderno exige que a aplicação das penas de improbidade passe por uma severa filtragem de dosimetria e proporcionalidade normativa."
                         </blockquote>
                         
                         <div class="wrapper-botao">
-                            <span class="btn-revista">
+                            <a href="http://revistas.unirn.edu.br/index.php/revistajuridica/article/view/1171/988" target="_blank" class="btn-revista">
                                 Ler trabalho completo na Revista do UNI-RN ↗
-                            </span>
+                            </a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -672,7 +678,7 @@
                     <div class="timeline-company">OAB / RN</div>
                     <div class="timeline-title">Membro Consultor — Comissão de Direito Bancário</div>
                     <div class="timeline-date">2026 – Atual</div>
-                    <p>Participação activa e consultiva junto à comissão temática da seccional, contribuindo com debates, análises normativas e estudos voltados ao desenvolvimento e acompanhamento das demandas do direito bancário.</p>
+                    <p>Participação ativa e consultiva junto à comissão temática da seccional, contribuindo com debates, análises normativas e estudos voltados ao desenvolvimento e acompanhamento das demandas do direito bancário.</p>
                 </div>
 
                 <div class="timeline-item">
