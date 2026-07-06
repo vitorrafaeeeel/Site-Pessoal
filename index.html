@@ -221,14 +221,13 @@
             margin-bottom: 45px;
         }
 
-        /* Layout de Cards de Artigos */
+        /* GRELHA DE ARTIGOS COMPACTA */
         .artigos-grid {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 24px;
         }
 
-        /* CONTAINER INTERATIVO REFINADO (Transição longa de 1.2s para máxima suavidade) */
         .interactive-article-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #f8fafc;
@@ -275,7 +274,6 @@
             margin-bottom: 25px;
         }
 
-        /* Texto da meta V1 */
         .meta-default {
             font-size: 0.85rem;
             color: #94a3b8;
@@ -324,7 +322,6 @@
             font-size: 1rem;
         }
 
-        /* Novo visual limpo e editorial para o botão */
         .wrapper-botao {
             margin-top: 30px;
         }
@@ -354,7 +351,36 @@
             box-shadow: 0 8px 24px rgba(154, 52, 18, 0.3);
         }
 
-        /* Módulo de Experiências Estilo Linha do Tempo Fina */
+        /* Botão para acessar o Repositório de Artigos */
+        .ver-repositorio-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn-repositorio {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+            color: #0f172a;
+            border: 1px solid #0f172a;
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-repositorio:hover {
+            background-color: #0f172a;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Módulo de Experiências */
         .timeline-container {
             position: relative;
             padding-left: 32px;
@@ -475,7 +501,6 @@
             padding-left: 4px;
         }
 
-        /* Ícones Sociais Circulares Flutuantes */
         .social-links-editorial {
             display: flex;
             gap: 12px;
@@ -495,13 +520,6 @@
             transition: all 0.3s ease;
         }
 
-        .social-link-item:hover {
-            color: #ffffff;
-            border-color: #ffffff;
-            transform: translateY(-3px);
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-
         .social-link-item svg {
             width: 16px;
             height: 16px;
@@ -517,89 +535,30 @@
             text-align: center;
         }
 
-        /* ==========================================================================
-           MÉDIAS QUERIES: Responsividade Fina e Alinhada
-           ========================================================================== */
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 0;
-            }
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-
-            header {
-                padding: 60px 0;
-            }
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .profile-box {
-                justify-content: center;
-                order: -1;
-            }
-            .profile-img {
-                width: 200px;
-                height: 240px;
-            }
-            .hero-text h1 {
-                font-size: 2.4rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-            section[id] {
-                scroll-margin-top: 110px;
-            }
-            section h2 {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-
-            .interactive-article-card {
-                padding: 35px 24px;
-            }
-            .interactive-article-card:hover {
-                padding-bottom: 40px;
-            }
-            .interactive-article-card h3 {
-                font-size: 1.4rem;
-            }
-            
-            .interactive-article-card:hover .hidden-content-wrapper {
-                max-height: 800px;
-            }
-            .btn-revista {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .footer-col h4 {
-                margin-bottom: 16px;
-            }
-            footer {
-                padding: 60px 0 30px 0;
-            }
-            .copyright {
-                margin-top: 50px;
-            }
+            nav { padding: 15px 0; }
+            .nav-container { flex-direction: column; gap: 12px; }
+            .nav-links { gap: 20px; }
+            header { padding: 60px 0; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .profile-box { justify-content: center; order: -1; }
+            .profile-img { width: 200px; height: 240px; }
+            .hero-text h1 { font-size: 2.4rem; }
+            section { padding: 60px 0; }
+            section h2 { font-size: 2rem; margin-bottom: 30px; }
+            .interactive-article-card { padding: 35px 24px; }
+            .interactive-article-card:hover { padding-bottom: 40px; }
+            .interactive-article-card h3 { font-size: 1.4rem; }
+            .interactive-article-card:hover .hidden-content-wrapper { max-height: 800px; }
+            .btn-revista { width: 100%; justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            footer { padding: 60px 0 30px 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Menu de Navegação Fixo com Efeito Glassmorphism -->
+    <!-- Menu de Navegação Interativo Principal -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="nav-logo">VITOR FERNANDES</a>
@@ -612,7 +571,7 @@
         </div>
     </nav>
 
-    <!-- Seção Inicial / Hero -->
+    <!-- Apresentação -->
     <header id="inicio">
         <div class="container hero-grid">
             <div class="hero-text">
@@ -620,7 +579,7 @@
                 <h1>O direito é <span class="italic-serif">estratégia</span> antes de ser processo.</h1>
                 <div class="hero-bio">
                     <p>
-                        Acredito que a advocacia de excelência não se limita a gerenciar litígios, mas antecipá-los através de um raciocínio analítico e preventivo. Sou acadêmico de Direito com sólida formação teórica e experiência prática voltada ao suporte estratégico no manuseio de demandas and na resolução eficiente de conflitos.
+                        Acredito que a advocacia de excelência não se limita a gerenciar litígios, mas antecipá-los através de um raciocínio analítico e preventivo. Sou acadêmico de Direito com sólida formação teórica e experiência prática voltada ao suporte estratégico no manuseio de demandas e na resolução eficiente de conflitos.
                     </p>
                     <p>
                         Minha trajetória combina a atuação proativa como assistente jurídico no desenvolvimento de peças e acompanhamento processual com o rigor acadêmico da pesquisa acadêmica e extensão. Busco traduzir a complexidade das normas em soluções viáveis e seguras, enxergando cada cenário como uma oportunidade única para alinhar técnica jurídica a uma visão inovadora.
@@ -637,14 +596,43 @@
 
     <hr class="section-divider">
 
-    <!-- Seção de Artigos com Expansão Altamente Suave -->
+    <!-- Seção de Artigos Limitada aos Últimos 3 Publicados -->
     <section id="artigos">
         <div class="container">
             <span class="section-tag">01 / Produção Acadêmica</span>
+            <!-- Nome ajustado conforme solicitação -->
             <h2>Artigos.</h2>
             
             <div class="artigos-grid">
-                <!-- Card Mágico Dinâmico Corrigido -->
+                
+                <!-- [ESPAÇO RESERVADO PARA O SEU FUTURO 3º ARTIGO MAIS RECENTE]
+                Ao escrever um novo texto, cole a estrutura de div abaixo aqui em cima para empurrar os antigos para baixo.
+                -->
+
+                <!-- ARTIGO 1: CASO FLOW -->
+                <div class="interactive-article-card">
+                    <span class="badge-dark">Direito Empresarial / M&A</span>
+                    <h3>A Anatomia Jurídica do Caso Flow: O Perigo dos Termos Genéricos em Contratos de M&A.</h3>
+                    
+                    <span class="meta-default">Revista de Estudos Jurídicos do UNI-RN &bull; Leitura Disponível ↗</span>
+                    
+                    <div class="hidden-content-wrapper">
+                        <p class="article-body-text" style="margin-top: 25px;">
+                            O rompimento societário desencadeado pela crise reputacional nos Estúdios Flow em 2022 expôs os perigos de transações corporativas estruturadas sob pressão. A análise minuciosa do contrato revela imprecisões contábeis gravíssimas e falhas profundas de assinalação no manuseio da propriedade intelectual da marca.
+                        </p>
+                        <blockquote class="texto-citacao">
+                            "No direito empresarial, o atropelo processual gerado pela urgência em solucionar crises de imagem frequentemente resulta em instrumentos jurídicos frágeis que apenas postergam e amplificam o litígio sob a forma de uma complexa batalha judicial."
+                        </blockquote>
+                        
+                        <div class="wrapper-botao">
+                            <a href="caso-flow.html" class="btn-revista">
+                                Ler artigo autoral completo ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTIGO 2: TCC -->
                 <div class="interactive-article-card">
                     <span class="badge-dark">Revista Científica / TCC</span>
                     <h3>A Lei 14.230/2021 e o regime sancionatório da improbidade administrativa: uma análise do artigo 12 à luz da interpretação normativa.</h3>
@@ -655,7 +643,6 @@
                         <p class="article-body-text" style="margin-top: 25px;">
                             A reforma introduzida pela Lei 14.230/2021 alterou substancialmente a sistemática processual e material das sanções, exigindo do operador do direito uma visão muito mais estratégica e hermenêutica do texto constitucional.
                         </p>
-                        <!-- Tag aberta corrigida cirurgicamente aqui com o sinal < -->
                         <blockquote class="texto-citacao">
                             "O direito sancionatório moderno exige que a aplicação das penas de improbidade passe por uma severa filtragem de dosimetria e proporcionalidade normativa."
                         </blockquote>
@@ -667,7 +654,14 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
+            <!-- Botão do Repositório -->
+            <div class="ver-repositorio-container">
+                <a href="artigos.html" class="btn-repositorio">Ver Repositório de Artigos Completo →</a>
+            </div>
+
         </div>
     </section>
 
@@ -680,7 +674,6 @@
             <h2>Experiências.</h2>
             
             <div class="timeline-container">
-                <!-- Item 1: OAB Bancário -->
                 <div class="timeline-item">
                     <div class="timeline-company">OAB / RN</div>
                     <div class="timeline-title">Membro Consultor — Comissão de Direito Bancário</div>
@@ -688,7 +681,6 @@
                     <p>Participação ativa e consultiva junto à comissão temática da seccional, contribuindo com debates, análises normativas e estudos voltados ao desenvolvimento e acompanhamento das demandas do direito bancário.</p>
                 </div>
 
-                <!-- Item 2: MDR Advocacia -->
                 <div class="timeline-item">
                     <div class="timeline-company">MDR Advocacia</div>
                     <div class="timeline-title">Assistente Jurídico</div>
@@ -696,7 +688,6 @@
                     <p>Atuação de alta performance no suporte a rotinas jurídicas, manuseio de plataformas processuais, elaboração de documentos complexos e acompanhamento estratégicos de processos.</p>
                 </div>
 
-                <!-- Item 3: Projeto Tribunal do Júri -->
                 <div class="timeline-item">
                     <div class="timeline-company">Projeto Tribunal do Júri</div>
                     <div class="timeline-title">Membro da Pasta Acadêmica</div>
@@ -710,8 +701,6 @@
     <!-- Rodapé Premium -->
     <footer id="contato">
         <div class="container footer-grid">
-            
-            <!-- Coluna 1: Perfil e Redes Interativas -->
             <div class="footer-col">
                 <h3>Vitor Fernandes</h3>
                 <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 10px;">Acadêmico de Direito</p>
@@ -727,31 +716,24 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Coluna 2: Links Rápidos -->
             <div class="footer-col">
                 <h4>Navegação</h4>
                 <ul>
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#artigos">Artigos</a></li>
+                    <li><a href="artigos.html">Artigos</a></li>
                     <li><a href="#experiencias">Experiências</a></li>
                 </ul>
             </div>
-
-            <!-- Coluna 3: Informações de Contato -->
             <div class="footer-col">
                 <h4>Contato</h4>
                 <p><strong>Endereço:</strong> Rua Enéas Reis, 765, Petrópolis, Natal - RN</p>
                 <p><strong>Telefone:</strong> (84) 98633-7894</p>
                 <p><strong>E-mail:</strong> vitor.fernandes@outlook.com</p>
             </div>
-
         </div>
-
         <div class="copyright">
             <p>&copy; 2026 Vitor Fernandes. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 </body>
 </html>
