@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigo | Vitor Fernandes</title>
+    <style>
+        /* Reset e Definições Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ef;
+            color: #1e293b;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.85;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Elementos de apoio modernos */
+        nav, .btn-voltar, .meta-artigo, footer {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .container-artigo {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Menu de Navegação Superior Simples */
+        nav {
+            border-bottom: 1px solid rgba(212, 203, 191, 0.5);
+            padding: 20px 0;
+            background-color: rgba(247, 244, 239, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #0f172a;
+            letter-spacing: 2px;
+        }
+
+        /* Botão de Retorno */
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #9a3412;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 50px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-voltar:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Tipografia Estrutural */
+        article {
+            padding: 40px 0 100px 0;
+        }
+
+        .meta-artigo {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #64748b;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: #0f172a;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .divisor-artigo {
+            border: 0;
+            border-top: 1px solid rgba(212, 203, 191, 0.6);
+            margin: 30px 0;
+        }
+
+        /* Corpo Editorial do Texto */
+        .conteudo-texto p {
+            font-size: 1.15rem;
+            color: #2d3748;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+
+        footer {
+            padding: 60px 0 40px 0;
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.9rem; }
+            .conteudo-texto p { font-size: 1.05rem; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container-artigo nav-container">
+            <a href="index.html" class="nav-logo">VITOR FERNANDES</a>
+        </div>
+    </nav>
+
+    <div class="container-artigo">
+        <!-- Corrigido para retornar diretamente para a guia de repositório de artigos -->
+        <a href="artigos.html" class="btn-voltar">← Voltar para as Publicações</a>
+        
+        <article>
+            <span class="meta-artigo">Publicado em Julho de 2026 &bull; Leitura de 4 min &bull; M&A</span>
+            <h1>A Anatomia Jurídica do Caso Flow: O Perigo dos Termos Genéricos em Contratos de M&A</h1>
+            
+            <hr class="divisor-artigo">
+
+            <div class="conteudo-texto">
+                <p>
+                    O rompimento societário entre Bruno Ayub e Igor Coelho em fevereiro de 2022, desencadeado pela crise reputacional que envolveu declarações de Monark sobre a legalidade de um partido nazista, converteu-se em um dos litígios mais emblemáticos do direito empresarial brasileiro recente. O vazamento dos termos do contrato de compra e venda da totalidade das cotas (49,75%) detidas por Monark na holding controladora dos Estúdios Flow revelou uma estrutura negocial complexa, porém eivada de imprecisões técnicas. Longe de caracterizar um mero descumprimento obrigacional, o embate expõe as graves consequências de contratos de M&A (Fusões e Aquisições) redigidos sob o impacto imediato de gerenciamento de crises, oferecendo um vasto campo de análise sobre as condições potestativas, os vícios de consentimento e a formalização da propriedade intelectual.
+                </p>
+
+                <p>
+                    O ponto nodal da divergência financeira reside na interpretação da cláusula que condicionou o pagamento das parcelas. Ficou pactuado que a saída do ex-sócio se daria pelo montante de R$ 10 milhões, fracionado em 200 prestações mensais de R$ 50 mil. Todavia, o adimplemento integral de cada parcela foi atrelado a uma condição de desempenho: a empresa deveria apresentar uma "lucratividade" mínima equivalente a três vezes o valor da prestação (R$ 150 mil) no respectivo mês de referência.
+                </p>
+
+                <p>
+                    Sob a ótica do Direito Societário and da contabilidade forense, a utilização do termo genérico "lucratividade" representa uma grave omissão técnica. O instrumento falhou ao não discriminar se a referência adotada seria o Lucro Bruto, o Lucro Líquido, o EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) ou o Fluxo de Caixa Livre. Ademais, como o contrato vinculou a holding (sociedade puramente controladora) e a receita operacional advém das sociedades limitadas situadas abaixo de sua estrutura, criou-se um vácuo interpretativo sobre qual demonstração financeira deve, de fato, ser auditada para a verificação do gatilho de pagamento.
+                </p>
+
+                <p>
+                    Essa obscuridade conceitual abre margem para a arguição de nulidade por instituição de condição puramente potestativa, vedada expressamente pelo artigo 122 do Código Civil brasileiro. Uma condição é reputada puramente potestativa quando o seu implemento fica sujeito ao arbítrio exclusivo de uma das partes, eliminando a natureza bilateral e comutativa do negócio jurídico.
+                </p>
+
+                <p>
+                    No cenário em tela, na medida em que o sócio remanescente detém a administração exclusiva do grupo econômico, ele possui o poder discricionário de definir políticas de reinvestimento, provisionamento de bônus, expansão de estúdios ou renegociação de passivos antes da apuração do resultado do exercício. Caso reste demonstrado que o fluxo de caixa foi artificialmente comprimido para justificar o pagamento reduzido das parcelas, incidirá a regra do artigo 129 do Código Civil. O dispositivo estabelece a ficção jurídica do implemento, segundo a qual reputa-se verificada a condição cujo cumprimento foi maliciosamente obstado pela parte a quem desfavorecia, o que obrigaria a empresa ao pagamento integral e retroativo das parcelas de R$ 50 mil.
+                </p>
+
+                <p>
+                    Outro aspecto defensivo que emerge da análise do caso refere-se à possibilidade de alegação de defeito do negócio jurídico por parte do alienante. Para tentar desconstituir os termos do contrato principal ou de eventuais termos aditivos que reduziram o valor pago para R$ 25 mil mensais, a defesa de Monark teria de enfrentar a estrita barreira probatória dos institutos da lesão (artigo 157 do Código Civil) ou do estado de perigo (artigo 156 do Código Civil).
+                </p>
+
+                <p>
+                    A tese sustentaria que, diante do iminente colapso econômico do canal, da perda em massa de patrocinadores e do severo linchamento virtual sofrido em fevereiro de 2022, o ex-sócio anuiu com um parcelamento de longuíssimo prazo sem as devidas travas de correção monetária ou juros compensatórios adequados, assumindo uma obrigação manifestamente desproporcional para mitigar os prejuízos imediatos da marca. Contudo, a jurisprudência pátria adota uma postura de intervenção mínima nos contratos civis e comerciais paritários, prestigiando o princípio da força obrigatória dos contratos (pacta sunt servanda), o que exige prova robusta de vício de consentimento para relativizar o que foi pactuado livremente entre empresários assessores.
+                </p>
+
+                <p>
+                    Paralelamente à disputa financeira, a titularidade da propriedade intelectual apresenta-se como um gargalo jurídico de difícil resolução. Monark declarou publicamente que a cessão das cotas societárias não operou a transferência automática da marca Flow, uma vez que os protocolos originais de registro junto ao Instituto Nacional da Propriedade Industrial (INPI) encontravam-se vinculados à sua pessoa física.
+                </p>
+
+                <p>
+                    De acordo com a Lei de Propriedade Industrial (Lei nº 9.279/1996), a propriedade da marca adquire-se exclusivamente pelo registro validamente expedido pelo INPI, e qualquer ato de cessão exige instrumento escrito específico e averbação perante a autarquia para produzir efeitos erga omnes. Se o contrato original limitou-se a transferir os ativos abstratos da holding por meio de cláusulas genéricas, sem individualizar os registros de marca e colher as assinaturas nos formulários específicos de transferência do INPI, configurou-se uma grave falha de assessoria jurídica.
+                </p>
+
+                <p>
+                    As consequências processuais dessa lacuna na propriedade intelectual cindem-se em dois caminhos prováveis. Por um lado, se houver no corpo do contrato uma cláusula de obrigação de fazer onde o vendedor se comprometia a outorgar todos os atos necessários para a consolidação dos ativos intangíveis, os Estúdios Flow poderão requerer uma adjudicação judicial da marca, onde o magistrado supre a vontade do devedor e ordena ao INPI a transferência da titularidade.
+                </p>
+                
+                <p>
+                    Por outro lado, caso inexista tal comando impositivo e específico, o ex-sócio detém legitimidade para ingressar com uma ação de arbitramento de royalties pela exploração comercial contínua do nome de sua propriedade, ou mesmo pleitear indenizações retroativas, embora seu comportamento omissivo e tolerante ao longo dos últimos anos possa ser confrontado pelo princípio da boa-fé objetiva, especificamente sob a vertente do <em>venire contra factum proprium</em> (proibição de comportamento contraditório).
+                </p>
+
+                <p>
+                    Em divisão analítica, o desfecho do litígio entre os fundadores do Flow Podcast dependerá fundamentalmente de uma complexa fase de instrução processual, focada em perícia contábil judicial para auditar a real saúde financeira das empresas do grupo e determinar a existência de manipulação fiscal, aliada à interpretação literal e sistemática das cláusulas de quitação. No direito empresarial, o atropelo processual gerado pela urgência em solucionar crises de imagem frequentemente resulta em instrumentos jurídicos frágeis que não extinguem o conflito, mas apenas postergam e amplificam o litígio sob a forma de uma complexa batalha judicial.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vitor Fernandes. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
