@@ -25,7 +25,7 @@
         }
 
         /* Fontes de Apoio Modernas */
-        h1, h2, h3, h4, nav, .badge, p, .timeline-date, .timeline-company, footer, .btn-revista {
+        h1, h2, h3, h4, nav, .badge, p, .timeline-date, .timeline-company, footer, .btn-revista, .meta-default {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -221,14 +221,31 @@
             margin-bottom: 45px;
         }
 
-        /* Bloco Estilizado de Artigo Aberto (Sem arquivo externo) */
-        .article-block-premium {
+        /* Layout de Cards de Artigos */
+        .artigos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        /* CONTAINER INTERATIVO AVANÇADO (V1 expande para V2 ao passar o mouse) */
+        .interactive-article-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #f8fafc;
-            padding: 50px;
+            padding: 45px 50px;
             border-radius: 14px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .interactive-article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.25);
+            border-color: rgba(212, 203, 191, 0.15);
+            padding-bottom: 50px;
         }
 
         .badge-dark {
@@ -245,32 +262,72 @@
             color: #e2e8f0;
         }
 
-        .article-block-premium h3 {
+        .interactive-article-card h3 {
             font-family: 'Georgia', serif;
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 400;
-            line-height: 1.3;
+            line-height: 1.35;
+            color: #ffffff;
+            margin-bottom: 0;
+            transition: margin 0.4s ease, color 0.3s ease;
+        }
+
+        .interactive-article-card:hover h3 {
             margin-bottom: 25px;
             color: #ffffff;
         }
 
-        .article-body-text {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            line-height: 1.7;
+        /* Linha discreta padrão da V1 */
+        .meta-default {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 25px;
+            display: block;
+            opacity: 1;
+            max-height: 40px;
+            transition: all 0.3s ease;
         }
 
-        .article-block-premium blockquote {
+        .interactive-article-card:hover .meta-default {
+            opacity: 0;
+            max-height: 0;
+            margin-top: 0;
+            overflow: hidden;
+        }
+
+        /* Conteúdo Oculto Expandível (Texto, Citação e Botão da V2) */
+        .hidden-content-wrapper {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, visibility 0.4s;
+        }
+
+        .interactive-article-card:hover .hidden-content-wrapper {
+            max-height: 600px; /* Altura máxima suficiente para acomodar o conteúdo expandido */
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .article-body-text {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.65;
+        }
+
+        .interactive-article-card blockquote {
             border-left: 3px solid #9a3412;
             padding-left: 18px;
             margin: 25px 0;
             font-style: italic;
             color: #94a3b8;
+            font-size: 1rem;
         }
 
         .wrapper-botao {
-            margin-top: 35px;
+            margin-top: 30px;
         }
 
         .btn-revista {
@@ -285,12 +342,14 @@
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(154, 52, 18, 0.15);
             transition: all 0.2s ease;
         }
 
         .btn-revista:hover {
             background-color: #ea580c;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(154, 52, 18, 0.3);
         }
 
         /* Módulo de Experiências Estilo Linha do Tempo Fina */
@@ -502,11 +561,19 @@
                 margin-bottom: 30px;
             }
 
-            .article-block-premium {
+            .interactive-article-card {
                 padding: 35px 24px;
             }
-            .article-block-premium h3 {
+            .interactive-article-card:hover {
+                padding-bottom: 40px;
+            }
+            .interactive-article-card h3 {
                 font-size: 1.4rem;
+            }
+            
+            /* Em telas de toque móveis, o conteúdo já pode expandir por padrão ou no clique */
+            .interactive-article-card:hover .hidden-content-wrapper {
+                max-height: 800px;
             }
 
             .footer-grid {
@@ -565,27 +632,36 @@
 
     <hr class="section-divider">
 
-    <!-- Seção de Artigos Exibida Diretamente na Página de Forma Elegante -->
+    <!-- Seção de Artigos com Efeito de Expansão Dinâmica -->
     <section id="artigos">
         <div class="container">
             <span class="section-tag">01 / Produção Acadêmica</span>
             <h2>Artigos.</h2>
             
-            <div class="article-block-premium">
-                <span class="badge-dark">Revista Científica / TCC</span>
-                <h3>A Lei 14.230/2021 e o regime sancionatório da improbidade administrativa: uma análise do artigo 12 à luz da interpretação normativa.</h3>
-                
-                <p class="article-body-text">
-                    A reforma introduzida pela Lei 14.230/2021 alterou substancialmente a sistemática processual e material das sanções, exigindo do operador do direito uma visão muito mais estratégica e hermenêutica do texto constitucional.
-                </p>
-                <blockquote>
-                    "O direito sancionatório moderno exige que a aplicação das penas de improbidade passe por uma severa filtragem de dosimetria e proporcionalidade normativa."
-                </blockquote>
-                
-                <div class="wrapper-botao">
-                    <a href="http://revistas.unirn.edu.br/index.php/revistajuridica/article/view/1171/988" target="_blank" class="btn-revista">
-                        Ler trabalho completo na Revista do UNI-RN ↗
-                    </a>
+            <div class="artigos-grid">
+                <!-- Card Mágico Dinâmico (V1 expande para V2) -->
+                <div class="interactive-article-card">
+                    <span class="badge-dark">Revista Científica / TCC</span>
+                    <h3>A Lei 14.230/2021 e o regime sancionatório da improbidade administrativa: uma análise do artigo 12 à luz da interpretação normativa.</h3>
+                    
+                    <!-- Linha discreta exibida apenas no modo normal (image_eddede.png) -->
+                    <span class="meta-default">Leitura Interna Disponível &nbsp;&bull;&nbsp; Clique para ler o resumo completo ↗</span>
+                    
+                    <!-- Elementos revelados de forma fluida no hover (image_ed8d3e.png) -->
+                    <div class="hidden-content-wrapper">
+                        <p class="article-body-text" style="margin-top: 25px;">
+                            A reforma introduzida pela Lei 14.230/2021 alterou substancialmente a sistemática processual e material das sanções, exigindo do operador do direito uma visão muito mais estratégica e hermenêutica do texto constitucional.
+                        </p>
+                        <blockquote>
+                            "O direito sancionatório moderno exige que a aplicação das penas de improbidade passe por uma severa filtragem de dosimetria e proporcionalidade normativa."
+                        </blockquote>
+                        
+                        <div class="wrapper-botao">
+                            <a href="http://revistas.unirn.edu.br/index.php/revistajuridica/article/view/1171/988" target="_blank" class="btn-revista">
+                                Ler trabalho completo na Revista do UNI-RN ↗
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
