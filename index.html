@@ -328,27 +328,37 @@
             padding-left: 4px;
         }
 
-        /* Links de Redes Discretos e Interativos */
+        /* Botões Redondos Minimalistas de Ícones */
         .social-links-editorial {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .social-links-editorial a {
-            text-decoration: none;
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid #dcd6cd;
+            background-color: transparent;
             color: #555;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            display: inline-block;
-            transition: transform 0.2s ease, color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
-        .social-links-editorial a:hover {
+        .social-link-item:hover {
             color: #1a1a1a;
+            border-color: #1a1a1a;
             transform: translateY(-2px);
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .social-link-item svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         .copyright {
@@ -359,10 +369,9 @@
         }
 
         /* ==========================================================================
-           MÉDIAS QUERIES: Ajustes Mobile Refinados (Correção do Print 2)
+           MÉDIAS QUERIES: Mobile Responsivo com Inícios Alinhados à Esquerda
            ========================================================================== */
         @media (max-width: 768px) {
-            /* Deixa o menu em linha única fluida com scroll se necessário, evitando quebra em 2 blocos */
             .nav-container {
                 flex-direction: column;
                 gap: 12px;
@@ -382,7 +391,6 @@
                 letter-spacing: 0.5px;
             }
 
-            /* Organização do bloco inicial */
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
@@ -403,7 +411,6 @@
                 padding: 0 10px;
             }
 
-            /* Correção de paddings e margens gerais */
             .container {
                 padding: 0 20px;
             }
@@ -415,7 +422,6 @@
                 margin-bottom: 25px;
             }
 
-            /* Ajustes finos nos cards */
             .article-card-dark {
                 padding: 30px 20px;
             }
@@ -430,28 +436,42 @@
                 font-size: 1.2rem;
             }
 
-            /* CORREÇÃO CRÍTICA DO RODAPÉ MOBILE (Grelha compacta em vez de linhas infinitas) */
+            /* Correção Total de Alinhamento (Sem funil ou quebra abrupta) */
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 35px;
-                text-align: center;
-                padding-top: 35px;
+                text-align: left;
+                padding-top: 30px;
             }
-            .footer-col h3 {
-                font-size: 1.3rem;
+
+            .footer-col h3, .footer-col h4 {
+                text-align: left;
             }
-            .footer-col h4 {
-                margin-bottom: 10px;
-            }
+            
             .social-links-editorial {
-                justify-content: center;
-                gap: 25px;
+                justify-content: flex-start;
+                gap: 15px;
             }
+
+            .footer-col ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .footer-col p {
+                font-size: 0.9rem;
+                max-width: 100%;
+                margin: 0 0 8px 0;
+                text-align: left;
+            }
+
             footer {
-                padding: 50px 0 20px 0;
+                padding: 40px 0 20px 0;
             }
             .copyright {
-                margin-top: 40px;
+                margin-top: 35px;
             }
         }
     </style>
@@ -530,18 +550,24 @@
         </div>
     </section>
 
-    <!-- Rodapé Editorial Reformulado para Mobile -->
+    <!-- Rodapé Editorial Limpo -->
     <footer id="contato">
         <div class="container footer-grid">
             
-            <!-- Coluna 1: Nome -->
+            <!-- Coluna 1: Nome com Botões Circulares de Ícones -->
             <div class="footer-col">
                 <h3>Vitor Fernandes</h3>
                 <p>Acadêmico de Direito</p>
                 <div class="social-links-editorial">
-                    <a href="https://api.whatsapp.com/send/?phone=5584986337894&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a>
-                    <a href="https://www.linkedin.com/in/vitor-rafael-a83a0222a/" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/vitor_rafaeeel/" target="_blank">Instagram</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5584986337894&text&type=phone_number&app_absent=0" target="_blank" class="social-link-item" title="WhatsApp">
+                        <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-93.8-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 88.6-184.5 184.6-184.5 46.6 0 90.3 18.2 123.3 51.2c33 33 51.2 76.9 51.2 123.5 0 101.7-88.6 184.4-184.6 184.4zm103.6-141.2c-5.7-2.9-33.7-16.6-39-18.5-5.3-1.9-9.2-2.9-13.1 2.9-3.9 5.7-15 18.5-18.4 22.4-3.4 3.9-6.8 4.4-12.5 1.5-5.7-2.9-23.9-8.8-45.6-27.5-16.9-15.1-28.3-33.7-31.1-38.6-2.8-5.7-.3-8.8 2.6-11.7 2.6-2.6 5.7-6.7 8.5-10 2.9-3.3 3.8-5.7 5.7-9.5 1.9-3.8 1-7.1-.5-10-1.5-3-13.1-31.5-18-42.2-4.8-11.5-9.7-9.9-13.1-10.1l-11.1-.2c-3.8 0-10.1 1.4-15.4 7.2-5.3 5.7-20.2 19.7-20.2 48.1 0 28.3 20.7 55.7 23.6 59.5 2.9 3.8 40.8 62.4 98.9 87.5 13.8 6 24.6 9.6 33 12.3 13.9 4.4 26.6 3.8 36.6 2.2 11.2-1.7 33.7-13.8 38.5-27.1 4.8-13.3 4.8-24.7 3.4-27.1-1.5-2.5-5.3-3.8-11-6.7z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vitor-rafael-a83a0222a/" target="_blank" class="social-link-item" title="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 26.1-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/vitor_rafaeeel/" target="_blank" class="social-link-item" title="Instagram">
+                        <svg viewBox="0 0 448 512"><path d="M224.1 141c-43.6 0-79 35.4-79 79s35.4 79 79 79 79-35.4 79-79-35.4-79-79-79zm114.5-26c-8.7-23.3-27.5-42.2-50.8-51-22.9-3.4-76.7-3.4-102.1-3.4s-79.2 0-102.1 3.4c-23.3 8.8-42.1 27.7-50.8 51-3.4 22.9-3.4 76.7-3.4 102.1s0 79.2 3.4 102.1c8.7 23.3 27.5 42.2 50.8 51 22.9 3.4 76.7 3.4 102.1 3.4s79.2 0 102.1-3.4c23.3-8.8 42.2-27.7 51-51 3.4-22.9 3.4-76.7 3.4-102.1s0-79.2-3.4-102.1zm-114.5 218c-54.1 0-98-43.9-98-98s43.9-98 98-98 98 43.9 98 98-43.9 98-98 98zm114.2-184.2c-12.6 0-22.8-10.2-22.8-22.8s10.2-22.8 22.8-22.8 22.8 10.2 22.8 22.8-10.2 22.8-22.8 22.8z"/></svg>
+                    </a>
                 </div>
             </div>
 
@@ -555,7 +581,7 @@
                 </ul>
             </div>
 
-            <!-- Coluna 3: Contatos -->
+            <!-- Coluna 3: Contate-me -->
             <div class="footer-col">
                 <h4>Contate-me</h4>
                 <p><strong>Endereço:</strong> Rua Enéas Reis, 765, Petrópolis, Natal - RN</p>
