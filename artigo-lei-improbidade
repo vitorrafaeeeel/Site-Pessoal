@@ -21,12 +21,12 @@
         }
 
         /* Elementos de apoio modernos */
-        nav, .btn-voltar, .meta-artigo, footer {
+        nav, .btn-voltar, .meta-artigo, .btn-revista, footer {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .container-artigo {
-            max-width: 720px; /* Largura perfeita recomendada para leitura confortável */
+            max-width: 720px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -123,7 +123,35 @@
             color: #475569;
         }
 
-        /* Rodapé Simplificado */
+        /* Botão de Direcionamento Editorial para a Revista */
+        .wrapper-botao {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .btn-revista {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .btn-revista:hover {
+            background-color: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.25);
+        }
+
+        /* Rodapé Minimalista de Leitura */
         footer {
             padding: 60px 0 40px 0;
             background-color: #1e293b;
@@ -139,7 +167,14 @@
             }
             .conteudo-texto p {
                 font-size: 1.05rem;
-                text-align: left; /* Melhor leitura no celular */
+                text-align: left;
+            }
+            .wrapper-botao {
+                text-align: center;
+            }
+            .btn-revista {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -165,17 +200,18 @@
 
             <div class="conteudo-texto">
                 <p>
-                    Aqui você começará a digitar a introdução do seu texto. O espaçamento e o tamanho de fonte desta página foram desenhados cirurgicamente para simular a leitura de um livro ou de uma revista jurídica de alto padrão, mantendo o usuário focado no seu argumento técnico.
-                </p>
-                <p>
                     A reforma introduzida pela Lei 14.230/2021 alterou substancialmente a sistemática processual e material das sanções, exigindo do operador do direito uma visão muito mais estratégica e hermenêutica do texto constitucional.
                 </p>
                 <blockquote>
                     "O direito sancionatório moderno exige que a aplicação das penas de improbidade passe por uma severa filtragem de dosimetria e proporcionalidade normativa."
                 </blockquote>
-                <p>
-                    Sempre que quiser criar um novo artigo, basta duplicar este arquivo no seu GitHub com outro nome (ex: `direito-bancario.html`) e alterar os textos de dentro desses parágrafos de forma totalmente intuitiva.
-                </p>
+                
+                <!-- Botão direcionador integrado à sua revista do UNI-RN -->
+                <div class="wrapper-botao">
+                    <a href="http://revistas.unirn.edu.br/index.php/revistajuridica/article/view/1171/988" target="_blank" class="btn-revista">
+                        Ler trabalho completo na Revista do UNI-RN ↗
+                    </a>
+                </div>
             </div>
         </article>
     </div>
