@@ -359,72 +359,99 @@
         }
 
         /* ==========================================================================
-           MÉDIAS QUERIES: Ajustes Críticos para Mobile (Inspirado no print do usuário)
+           MÉDIAS QUERIES: Ajustes Mobile Refinados (Correção do Print 2)
            ========================================================================== */
         @media (max-width: 768px) {
-            /* Correção do Menu Superior */
+            /* Deixa o menu em linha única fluida com scroll se necessário, evitando quebra em 2 blocos */
             .nav-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
                 text-align: center;
+                padding: 5px 0;
+            }
+            .nav-logo {
+                font-size: 1.2rem;
             }
             .nav-links {
-                gap: 20px;
-                flex-wrap: wrap;
+                gap: 18px;
+                width: 100%;
                 justify-content: center;
             }
             .nav-links a {
                 font-size: 0.75rem;
+                letter-spacing: 0.5px;
             }
 
-            /* Correção da Seção Inicial (Foto e Texto alinhados) */
+            /* Organização do bloco inicial */
             .hero-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
                 text-align: center;
             }
             .profile-box {
                 text-align: center;
-                order: -1; /* Foto passa para cima do texto no mobile */
+                order: -1;
             }
             .profile-img {
-                width: 200px;
-                height: 233px;
+                width: 180px;
+                height: 210px;
                 margin: 0 auto;
             }
             .hero-text h1 {
-                font-size: 2.4rem; /* Diminui para não quebrar feio no ecrã */
+                font-size: 2.3rem;
                 line-height: 1.2;
+                padding: 0 10px;
             }
 
-            /* Correção dos Artigos e Timeline para não estourarem as laterais */
+            /* Correção de paddings e margens gerais */
             .container {
-                padding: 0 20px; /* Reduz margens externas para dar espaço ao conteúdo */
+                padding: 0 20px;
             }
+            section {
+                padding: 50px 0;
+            }
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            /* Ajustes finos nos cards */
             .article-card-dark {
-                padding: 30px 20px; /* Reduz enchimento interno do card */
+                padding: 30px 20px;
             }
             .article-card-dark h3 {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
             }
             .timeline-box {
                 padding: 30px 20px;
+                gap: 30px;
             }
             .timeline-title {
                 font-size: 1.2rem;
             }
 
-            /* Rodapé Responsivo */
+            /* CORREÇÃO CRÍTICA DO RODAPÉ MOBILE (Grelha compacta em vez de linhas infinitas) */
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 35px;
                 text-align: center;
+                padding-top: 35px;
+            }
+            .footer-col h3 {
+                font-size: 1.3rem;
+            }
+            .footer-col h4 {
+                margin-bottom: 10px;
             }
             .social-links-editorial {
                 justify-content: center;
+                gap: 25px;
             }
             footer {
-                padding: 50px 0 30px 0;
+                padding: 50px 0 20px 0;
+            }
+            .copyright {
+                margin-top: 40px;
             }
         }
     </style>
@@ -503,7 +530,7 @@
         </div>
     </section>
 
-    <!-- Rodapé Editorial Limpo -->
+    <!-- Rodapé Editorial Reformulado para Mobile -->
     <footer id="contato">
         <div class="container footer-grid">
             
