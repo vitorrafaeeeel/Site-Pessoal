@@ -30,11 +30,16 @@
             padding: 0 30px;
         }
 
-        /* Menu de Navegação Minimalista Interativo */
+        /* Menu de Navegação Superior Congelado (Sticky Header) */
         nav {
             border-bottom: 1px solid #dcd6cd;
             padding: 25px 0;
-            background-color: #f5f1eb;
+            background-color: #f5f1eb; /* Mantém a cor de fundo do site */
+            position: -webkit-sticky; /* Suporte para navegadores antigos da Apple */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Garante que o menu fique sempre por cima de fotos e cards */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02); /* Sombra sutil ao rolar a página */
         }
 
         .nav-container {
@@ -151,6 +156,11 @@
         /* Seções de Conteúdo */
         section {
             padding: 70px 0;
+        }
+
+        /* Ajuste fino para o link de ancoragem não sumir embaixo do menu fixo */
+        section[id] {
+            scroll-margin-top: 90px;
         }
 
         .section-tag {
@@ -369,7 +379,7 @@
         }
 
         /* ==========================================================================
-           MÉDIAS QUERIES: Mobile Responsivo com Inícios Alinhados à Esquerda
+           MÉDIAS QUERIES: Mobile Responsivo com Menu e Inícios Alinhados
            ========================================================================== */
         @media (max-width: 768px) {
             .nav-container {
@@ -417,6 +427,9 @@
             section {
                 padding: 50px 0;
             }
+            section[id] {
+                scroll-margin-top: 130px; /* Maior espaçamento de rolagem no mobile para o menu empilhado */
+            }
             section h2 {
                 font-size: 1.8rem;
                 margin-bottom: 25px;
@@ -436,7 +449,6 @@
                 font-size: 1.2rem;
             }
 
-            /* Correção Total de Alinhamento (Sem funil ou quebra abrupta) */
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 35px;
@@ -478,7 +490,7 @@
 </head>
 <body>
 
-    <!-- Menu de Navegação Superior -->
+    <!-- Menu de Navegação Superior Fixado (Ajustado) -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="nav-logo">VITOR FERNANDES</a>
@@ -581,7 +593,7 @@
                 </ul>
             </div>
 
-            <!-- Coluna 3: Contate-me -->
+            <!-- Coluna 3: Contatos -->
             <div class="footer-col">
                 <h4>Contate-me</h4>
                 <p><strong>Endereço:</strong> Rua Enéas Reis, 765, Petrópolis, Natal - RN</p>
